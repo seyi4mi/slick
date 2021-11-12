@@ -1,0 +1,39 @@
+.slider {
+    height: 250px;
+    margin: auto;
+    position: relative;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+}
+
+.slide-tracks {
+    display: flex;
+    animation: bannermove 15s linear infinite;
+}
+
+.slide-tracks:hover {
+    animation-play-state: paused;
+}
+
+@keyframes bannermove {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(-50%, 0);
+    }
+}
+
+img {
+    width: 100%;
+}
+
+.cards {
+    height: 200px;
+    width: 270px;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+}

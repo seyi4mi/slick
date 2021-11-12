@@ -1,13 +1,10 @@
-import React, { Component } from "react"
-import Slider from "react-slick"
-import "slick-carousel/slick/slick.css"
-import "slick-carousel/slick/slick-theme.css"
+import React from "react"
 import "./slider.css"
 
 const images = [
 	{
 		name: "img 1",
-		url: "https://images.unsplash.com/photo-1636461574965-ff53b2c28a9f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=469&q=80",
+		url: "https://images.unsplash.com/photo-1636461574965-ff53b2c28a9f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80",
 	},
 	{
 		name: "img 2",
@@ -45,34 +42,19 @@ const images = [
 	},
 ]
 
-const cardContainer = {
-	width: "100%",
+const Slider = () => {
+	return (
+		<div className="slider">
+			<div className="slide-tracks">
+				{images.map((imgs) => {
+					return <img className="cards" src={imgs.url} alt="images" />
+				})}
+				{images.map((imgs) => {
+					return <img className="cards" src={imgs.url} alt="images" />
+				})}
+			</div>
+		</div>
+	)
 }
 
-export default class PauseOnHover extends Component {
-	render() {
-		const settings = {
-			dots: false,
-			draggable: false,
-			infinite: true,
-			slidesToShow: 6,
-			autoplay: true,
-			speed: 2000,
-			autoplaySpeed: 2000,
-			cssEase: "linear",
-		}
-		return (
-			<div className="cards" style={cardContainer}>
-				<Slider {...settings}>
-					{images.map((imgs) => {
-						return (
-							<div>
-								<img src={imgs.url} alt="images" width="90%" />
-							</div>
-						)
-					})}
-				</Slider>
-			</div>
-		)
-	}
-}
+export default Slider
